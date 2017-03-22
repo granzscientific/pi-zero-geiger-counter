@@ -1,4 +1,4 @@
-# pyGI/webGI - Web interface for for the Pi Geiger Counter
+# pyGI/webGI - A Web interface for the Granz Scientific Raspberry Pi Zero Geiger Counter
 
 Python/HTML5/CSS/JS/Websocket software suite for collecting, distributing,
 monitoring, mapping and analyzing ionizing radiation counts detected by the PiGI-Module.
