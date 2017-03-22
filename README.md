@@ -46,7 +46,7 @@ RPi.GPIO with the default installation.
 
 ### Clone repo
 
-    $ git clone https://github.com/granzscientific/PiGI.git
+    $ git clone https://github.com/granzscientific/PiZeroGeigerCounter.git
 
 ## Configuration
 
