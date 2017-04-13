@@ -1,0 +1,7 @@
+_ISRI2C: CODE, 31 0 133
+_I2CSlaveSetup: CODE, 273 0 57
+_main: CODE, 164 0 109
+__initialization: CODE, 19 0 9
+_EEPROMReadByte: CODE, 330 0 19
+_ISRDispatch: CODE, 4 0 14
+Total: 341

@@ -1,0 +1,593 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.obj
+end_init CODE 0 12 12 1 2
+reset_vec CODE 0 0 0 1 2
+idloc IDLOC 0 8000 8000 4 2
+config CONFIG 0 8007 8007 2 2
+$dist/default/production\PiGeiger.production.obj
+cinit CODE 0 13 13 C 2
+intentry CODE 0 4 4 E 2
+text4 CODE 0 1F 1F 85 2
+text2 CODE 0 14A 14A 13 2
+text1 CODE 0 111 111 39 2
+maintext CODE 0 A4 A4 6D 2
+cstackBANK0 BANK0 1 33 33 3 1
+cstackCOMMON COMMON 1 70 70 8 1
+clrtext CODE 0 15D 15D 6 2
+bssBANK0 BANK0 1 20 20 13 1
+bssCOMMON COMMON 1 78 78 3 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+BANK0 00036-0006F 1
+BANK1 000A0-000BF 1
+BIGRAM 02000-0206F 1
+CODE 00001-00003 2
+CODE 00163-007FF 2
+COMMON 0007B-0007D 1
+CONST 00001-00003 2
+CONST 00163-007FF 2
+EEDATA 0F000-0F0FF 2
+ENTRY 00001-00003 2
+ENTRY 00163-007FF 2
+RAM 00036-0006F 1
+RAM 000A0-000BF 1
+SFR0 00000-0001F 1
+SFR1 00080-0009F 1
+SFR10 00500-0056F 1
+SFR11 00580-005EF 1
+SFR12 00600-0066F 1
+SFR13 00680-006EF 1
+SFR14 00700-0076F 1
+SFR15 00780-007EF 1
+SFR16 00800-0086F 1
+SFR17 00880-008EF 1
+SFR18 00900-0096F 1
+SFR19 00980-009EF 1
+SFR2 00100-0016F 1
+SFR20 00A00-00A6F 1
+SFR21 00A80-00AEF 1
+SFR22 00B00-00B6F 1
+SFR23 00B80-00BEF 1
+SFR24 00C00-00C6F 1
+SFR25 00C80-00CEF 1
+SFR26 00D00-00D6F 1
+SFR27 00D80-00DEF 1
+SFR28 00E00-00E6F 1
+SFR29 00E80-00EEF 1
+SFR3 00180-001EF 1
+SFR30 00F00-00F6F 1
+SFR31 00F80-00FEF 1
+SFR4 00200-0026F 1
+SFR5 00280-002EF 1
+SFR6 00300-0036F 1
+SFR7 00380-003EF 1
+SFR8 00400-0046F 1
+SFR9 00480-004EF 1
+STACK 02016-0206F 1
+STRCODE 00001-00003 2
+STRCODE 00163-007FF 2
+STRING 00001-00003 2
+STRING 00163-007FF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <file name>:<line number> <address> <psect name> <class name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\PiGeiger.production.obj
+"C:\Program Files (x86)\Microchip\xc8\v1.32\include\pic12f1822.h":3855 0 text0 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":201 4 intentry CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":388 4 intentry CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":205 9 intentry CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":207 B intentry CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":208 C intentry CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":218 D intentry CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":392 13 cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":395 13 cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":445 13 cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":446 14 cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":447 15 cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":451 16 cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":452 17 cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":453 18 cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":454 19 cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":455 1A cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":456 1B cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":462 1C cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":463 1C cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":464 1D cinit CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":465 1E cinit CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":221 1F text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":249 1F text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":251 25 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":253 29 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":255 2E text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":256 31 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":258 34 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":260 35 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":261 36 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":262 38 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":265 39 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":268 3D text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":270 46 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":271 4D text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":273 4E text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":274 4F text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":277 50 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":279 54 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":281 58 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":283 5D text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":285 60 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":286 62 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":287 63 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":290 64 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":291 65 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":292 68 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":295 6C text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":296 6E text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":299 6F text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":301 74 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":304 79 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":306 7C text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":308 82 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":309 89 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":312 8A text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":313 8B text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":316 8C text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":318 90 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":320 94 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":323 99 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":325 9B text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":328 9C text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":332 A1 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":333 A3 text4 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":83 A4 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":90 A4 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":93 A7 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":95 A9 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":97 AB maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":100 AD maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":101 AF maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":103 B1 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":107 BD maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":109 CB maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":113 CF maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":115 D1 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":116 D3 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":119 D4 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":121 D6 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":122 D9 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":123 DB maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":125 DD maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":126 DF maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":129 E1 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":131 E3 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":134 E5 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":143 EA maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":145 EA maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":147 EB maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":150 F4 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":179 F6 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":181 FB maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":182 FE maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":183 101 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":185 101 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":186 103 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":187 105 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":188 107 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":191 107 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":193 108 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":194 10C maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":143 110 maintext CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":340 111 text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":345 112 text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":346 114 text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":348 115 text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":349 11A text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":348 11F text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":351 127 text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":352 12C text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":351 131 text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":354 139 text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":356 13C text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":357 13E text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":358 140 text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":360 142 text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":362 144 text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":364 145 text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":365 147 text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":366 149 text1 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":369 14A text2 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":371 14B text2 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":374 150 text2 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":375 151 text2 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":376 152 text2 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":377 153 text2 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":379 154 text2 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":380 155 text2 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":381 156 text2 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":382 157 text2 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":383 158 text2 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":384 159 text2 CODE
+"E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c":387 15A text2 CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":434 15D clrtext CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":435 15D clrtext CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":436 15E clrtext CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":437 15E clrtext CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":438 15F clrtext CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":439 160 clrtext CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":440 161 clrtext CODE
+"C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.":441 162 clrtext CODE
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+_PR2 1B 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__S0 8009 0 ABS 0 - -
+__S1 7B 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_CKP 10AC 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Hintentry 24 0 CODE 0 intentry -
+__Lintentry 8 0 CODE 0 intentry -
+__pintentry 8 0 CODE 0 intentry dist/default/production\PiGeiger.production.obj
+_GCEN 10B7 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_main 148 0 CODE 0 maintext dist/default/production\PiGeiger.production.obj
+_Temp 20 0 BANK0 1 bssBANK0 dist/default/production\PiGeiger.production.obj
+___sp 0 0 STACK 2 stack C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.obj
+btemp 7E 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+ltemp 7E 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+ttemp 7E 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+wtemp 7E 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+start 24 0 CODE 0 init C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.obj
+__size_of_I2CSlaveSetup 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_LATA5 865 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__end_of_ISRI2C 148 0 CODE 0 text4 dist/default/production\PiGeiger.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.obj
+_T2CON 1C 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_SSPEN 10AD 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_EEPROMReadByte 294 0 CODE 0 text2 dist/default/production\PiGeiger.production.obj
+_Temp1 31 0 BANK0 1 bssBANK0 dist/default/production\PiGeiger.production.obj
+_Temp2 32 0 BANK0 1 bssBANK0 dist/default/production\PiGeiger.production.obj
+ltemp0 7E 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+ttemp0 7E 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+wtemp0 7E 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+ltemp1 82 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+ttemp1 81 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+wtemp1 80 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+ltemp2 86 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+ttemp2 84 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+wtemp2 82 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+ltemp3 80 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+ttemp3 87 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+wtemp3 84 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+ttemp4 7F 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+wtemp4 86 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+wtemp5 88 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+wtemp6 7F 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Hconfig 10012 0 CONFIG 0 config -
+__Lconfig 1000E 0 CONFIG 0 config -
+main@k 35 0 BANK0 1 cstackBANK0 dist/default/production\PiGeiger.production.obj
+__Hbigram 0 0 ABS 0 bigram -
+__Lbigram 0 0 ABS 0 bigram -
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+__Hfunctab 0 0 CODE 0 functab -
+_TRISA1 461 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Lfunctab 0 0 CODE 0 functab -
+_TRISA2 462 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_EECON1 195 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_TRISA5 465 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_EECON2 196 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_ISRI2C 3E 0 CODE 0 text4 dist/default/production\PiGeiger.production.obj
+__Hcommon 0 0 ABS 0 common -
+__Lcommon 0 0 ABS 0 common -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__size_of_ISRI2C 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_PIR1bits 11 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_SSP1IE 48B 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.obj
+_SSP1IF 8B 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_CCPR1L 291 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_ANSELA 18C 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_OSCCON 99 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Habs1 0 0 ABS 0 abs1 -
+__Labs1 0 0 ABS 0 abs1 -
+_WDTCON 97 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_INTCON B 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Hsfr4 0 0 ABS 0 sfr4 -
+__Lsfr4 0 0 ABS 0 sfr4 -
+__Hsfr5 0 0 ABS 0 sfr5 -
+pic14e$flags 7E 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Lsfr5 0 0 ABS 0 sfr5 -
+__Hsfr6 0 0 ABS 0 sfr6 -
+__Lsfr6 0 0 ABS 0 sfr6 -
+__end_of_I2CSlaveSetup 294 0 CODE 0 text1 dist/default/production\PiGeiger.production.obj
+__Hsfr7 0 0 ABS 0 sfr7 -
+__Lsfr7 0 0 ABS 0 sfr7 -
+__Hsfr8 0 0 ABS 0 sfr8 -
+__Lsfr8 0 0 ABS 0 sfr8 -
+__Hsfr9 0 0 ABS 0 sfr9 -
+__Lsfr9 0 0 ABS 0 sfr9 -
+main@lockoutI2CAddressChange 33 0 BANK0 1 cstackBANK0 dist/default/production\PiGeiger.production.obj
+_I2CInBuffer 26 0 BANK0 1 bssBANK0 dist/default/production\PiGeiger.production.obj
+__CFG_IDLOC0$ 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+main@newI2CAddress 34 0 BANK0 1 cstackBANK0 dist/default/production\PiGeiger.production.obj
+__Hcode 0 0 ABS 0 code -
+__Lcode 0 0 ABS 0 code -
+stackhi 206F 0 ABS 0 - C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__size_of_EEPROMReadByte 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__pcstackBANK0 33 0 BANK0 1 cstackBANK0 dist/default/production\PiGeiger.production.obj
+stacklo 2016 0 ABS 0 - C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.obj
+__CFG_IDLOC1$ 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Hinit 24 0 CODE 0 init -
+__Linit 24 0 CODE 0 init -
+__end_of_main 222 0 CODE 0 maintext dist/default/production\PiGeiger.production.obj
+__Htext 0 0 ABS 0 text -
+__Ltext 0 0 ABS 0 text -
+end_of_initialization 38 0 CODE 0 cinit dist/default/production\PiGeiger.production.obj
+__size_of_ISRDispatch 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__CFG_IDLOC2$ 1 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Hsfr10 0 0 ABS 0 sfr10 -
+__Lsfr10 0 0 ABS 0 sfr10 -
+__Hsfr20 0 0 ABS 0 sfr20 -
+__Lsfr20 0 0 ABS 0 sfr20 -
+__Hsfr30 0 0 ABS 0 sfr30 -
+__Hsfr11 0 0 ABS 0 sfr11 -
+__Lsfr30 0 0 ABS 0 sfr30 -
+__Lsfr11 0 0 ABS 0 sfr11 -
+__Hsfr21 0 0 ABS 0 sfr21 -
+__Lsfr21 0 0 ABS 0 sfr21 -
+__Hsfr31 0 0 ABS 0 sfr31 -
+__Hsfr12 0 0 ABS 0 sfr12 -
+__Lsfr31 0 0 ABS 0 sfr31 -
+__Lsfr12 0 0 ABS 0 sfr12 -
+__Hsfr22 0 0 ABS 0 sfr22 -
+__Lsfr22 0 0 ABS 0 sfr22 -
+__Hsfr13 0 0 ABS 0 sfr13 -
+__Lsfr13 0 0 ABS 0 sfr13 -
+__Hsfr23 0 0 ABS 0 sfr23 -
+__Lsfr23 0 0 ABS 0 sfr23 -
+__Hsfr14 0 0 ABS 0 sfr14 -
+__Lsfr14 0 0 ABS 0 sfr14 -
+__Hsfr24 0 0 ABS 0 sfr24 -
+__Lsfr24 0 0 ABS 0 sfr24 -
+__Hsfr15 0 0 ABS 0 sfr15 -
+__Lsfr15 0 0 ABS 0 sfr15 -
+__Hsfr25 0 0 ABS 0 sfr25 -
+__Lsfr25 0 0 ABS 0 sfr25 -
+__Hsfr16 0 0 ABS 0 sfr16 -
+__Lsfr16 0 0 ABS 0 sfr16 -
+__Hsfr26 0 0 ABS 0 sfr26 -
+__Lsfr26 0 0 ABS 0 sfr26 -
+__Hsfr17 0 0 ABS 0 sfr17 -
+__Lsfr17 0 0 ABS 0 sfr17 -
+__Hsfr27 0 0 ABS 0 sfr27 -
+__Lsfr27 0 0 ABS 0 sfr27 -
+__Hsfr18 0 0 ABS 0 sfr18 -
+__Lsfr18 0 0 ABS 0 sfr18 -
+__Hsfr28 0 0 ABS 0 sfr28 -
+_SSP1ADD 212 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Lsfr28 0 0 ABS 0 sfr28 -
+__Hsfr19 0 0 ABS 0 sfr19 -
+__Lsfr19 0 0 ABS 0 sfr19 -
+__Hsfr29 0 0 ABS 0 sfr29 -
+__Lsfr29 0 0 ABS 0 sfr29 -
+I2CSlaveSetup@i 74 0 COMMON 1 cstackCOMMON dist/default/production\PiGeiger.production.obj
+__Hstrings 0 0 ABS 0 strings -
+__Lstrings 0 0 ABS 0 strings -
+__CFG_IDLOC3$ 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_SSP1BUF 211 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_CCP1SEL 8E8 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_CCP1CON 293 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Lbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 BANK2 1 bank2 -
+__Lbank2 0 0 BANK2 1 bank2 -
+__Hbank3 0 0 BANK3 1 bank3 -
+__Lbank3 0 0 BANK3 1 bank3 -
+___latbits 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Hbank4 0 0 BANK4 1 bank4 -
+__Lbank4 0 0 BANK4 1 bank4 -
+_ACKSTAT 10B6 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Hbank5 0 0 BANK5 1 bank5 -
+__Lbank5 0 0 BANK5 1 bank5 -
+__Hpowerup 0 0 CODE 0 powerup -
+__Lpowerup 0 0 CODE 0 powerup -
+__Hbank6 0 0 BANK6 1 bank6 -
+__Lbank6 0 0 BANK6 1 bank6 -
+__Hbank7 0 0 BANK7 1 bank7 -
+__Lbank7 0 0 BANK7 1 bank7 -
+__Hbank8 0 0 BANK8 1 bank8 -
+__Lbank8 0 0 BANK8 1 bank8 -
+__Hbank9 0 0 BANK9 1 bank9 -
+__Lbank9 0 0 BANK9 1 bank9 -
+__ptext0 0 0 CODE 0 text0 dist/default/production\PiGeiger.production.obj
+__ptext1 222 0 CODE 0 text1 dist/default/production\PiGeiger.production.obj
+__ptext2 294 0 CODE 0 text2 dist/default/production\PiGeiger.production.obj
+__ptext4 3E 0 CODE 0 text4 dist/default/production\PiGeiger.production.obj
+__Hclrtext 0 0 ABS 0 clrtext -
+__Lclrtext 0 0 ABS 0 clrtext -
+__CFG_WRT$ALL 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_I2CSlaveSetup 222 0 CODE 0 text1 dist/default/production\PiGeiger.production.obj
+I2CSlaveSetup@address 73 0 COMMON 1 cstackCOMMON dist/default/production\PiGeiger.production.obj
+__end_of__initialization 38 0 CODE 0 cinit dist/default/production\PiGeiger.production.obj
+_I2COutBuffer 2B 0 BANK0 1 bssBANK0 dist/default/production\PiGeiger.production.obj
+__end_of_EEPROMReadByte 2BA 0 CODE 0 text2 dist/default/production\PiGeiger.production.obj
+__Hidloc 10008 0 IDLOC 0 idloc -
+__Lidloc 10000 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__Lstack 0 0 STACK 2 stack -
+__Hspace_0 8009 0 ABS 0 - -
+__Lspace_0 0 0 ABS 0 - -
+_SSP1STATSave 7A 0 COMMON 1 bssCOMMON dist/default/production\PiGeiger.production.obj
+__Hspace_1 7B 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Hcinit 3E 0 CODE 0 cinit -
+__Lcinit 26 0 CODE 0 cinit -
+__Hspace_3 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__size_of_main 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+clear_ram0 2BA 0 CODE 0 clrtext dist/default/production\PiGeiger.production.obj
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+_SSP1CON1 215 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Hbank10 0 0 BANK10 1 bank10 -
+__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\PiGeiger.production.obj
+__Lbank10 0 0 BANK10 1 bank10 -
+__Hbank20 0 0 BANK20 1 bank20 -
+__Lbank20 0 0 BANK20 1 bank20 -
+_SSP1CON2 216 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Hbank30 0 0 BANK30 1 bank30 -
+__Hbank11 0 0 BANK11 1 bank11 -
+__Lbank30 0 0 BANK30 1 bank30 -
+__Lbank11 0 0 BANK11 1 bank11 -
+__Hbank21 0 0 BANK21 1 bank21 -
+__Lbank21 0 0 BANK21 1 bank21 -
+_SSP1CON3 217 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Hbank31 0 0 BANK31 1 bank31 -
+__Hbank12 0 0 BANK12 1 bank12 -
+__Lbank31 0 0 BANK31 1 bank31 -
+__Lbank12 0 0 BANK12 1 bank12 -
+__Hbank22 0 0 BANK22 1 bank22 -
+__Lbank22 0 0 BANK22 1 bank22 -
+__Hbank13 0 0 BANK13 1 bank13 -
+__Lbank13 0 0 BANK13 1 bank13 -
+__Hbank23 0 0 BANK23 1 bank23 -
+__Lbank23 0 0 BANK23 1 bank23 -
+__Hbank14 0 0 BANK14 1 bank14 -
+__Lbank14 0 0 BANK14 1 bank14 -
+__Hbank24 0 0 BANK24 1 bank24 -
+__Lbank24 0 0 BANK24 1 bank24 -
+__Hbank15 0 0 BANK15 1 bank15 -
+__Lbank15 0 0 BANK15 1 bank15 -
+__Hbank25 0 0 BANK25 1 bank25 -
+__Lbank25 0 0 BANK25 1 bank25 -
+__Hbank16 0 0 BANK16 1 bank16 -
+__Lbank16 0 0 BANK16 1 bank16 -
+__Hbank26 0 0 BANK26 1 bank26 -
+__Lbank26 0 0 BANK26 1 bank26 -
+__Hbank17 0 0 BANK17 1 bank17 -
+__Lbank17 0 0 BANK17 1 bank17 -
+__Hbank27 0 0 BANK27 1 bank27 -
+__Lbank27 0 0 BANK27 1 bank27 -
+__CFG_PLLEN$OFF 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__Hbank18 0 0 BANK18 1 bank18 -
+__Lbank18 0 0 BANK18 1 bank18 -
+__end_of_ISRDispatch 24 0 CODE 0 intentry dist/default/production\PiGeiger.production.obj
+__Hbank28 0 0 BANK28 1 bank28 -
+__Lbank28 0 0 BANK28 1 bank28 -
+__Hbank19 0 0 BANK19 1 bank19 -
+__Lbank19 0 0 BANK19 1 bank19 -
+__Hbank29 0 0 BANK29 1 bank29 -
+__Lbank29 0 0 BANK29 1 bank29 -
+__CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_I2COutBufIndex 79 0 COMMON 1 bssCOMMON dist/default/production\PiGeiger.production.obj
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+__pbssCOMMON 78 0 COMMON 1 bssCOMMON dist/default/production\PiGeiger.production.obj
+__Hend_init 26 0 CODE 0 end_init -
+__Lend_init 24 0 CODE 0 end_init -
+__Hreset_vec 2 0 CODE 0 reset_vec -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+EEPROMReadByte@addr 73 0 COMMON 1 cstackCOMMON dist/default/production\PiGeiger.production.obj
+intlevel0 0 0 CODE 0 functab C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.obj
+_SSP1STAT 214 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+intlevel1 0 0 CODE 0 functab C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.obj
+intlevel2 0 0 CODE 0 functab C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.obj
+_I2CInBufIndex 78 0 COMMON 1 bssCOMMON dist/default/production\PiGeiger.production.obj
+intlevel3 0 0 CODE 0 functab C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.obj
+intlevel4 0 0 CODE 0 functab C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.obj
+intlevel5 0 0 CODE 0 functab C:\Users\CHRIST~1.GRA\AppData\Local\Temp\s6s0.obj
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\PiGeiger.production.obj
+start_initialization 26 0 CODE 0 cinit dist/default/production\PiGeiger.production.obj
+__Hmaintext 0 0 ABS 0 maintext -
+__Lmaintext 0 0 ABS 0 maintext -
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+__pmaintext 148 0 CODE 0 maintext dist/default/production\PiGeiger.production.obj
+__CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+_ISRDispatch 8 0 CODE 0 intentry dist/default/production\PiGeiger.production.obj
+__initialization 26 0 CODE 0 cinit dist/default/production\PiGeiger.production.obj
+ISRI2C@generalCall 30 0 BANK0 1 bssBANK0 dist/default/production\PiGeiger.production.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\PiGeiger.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect in on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+reset_vec 0 0 0 1 2
+intentry 0 4 8 15F 2
+config 0 8007 1000E 2 2
+idloc 0 8000 10000 4 2
+cstackCOMMON 1 70 70 B 1
+bssBANK0 1 20 20 16 1

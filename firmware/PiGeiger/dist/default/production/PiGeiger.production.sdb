@@ -1,0 +1,259 @@
+[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 12F1822 ]
+[d frameptr 6 ]
+"83 E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c
+[v _main main `(v  1 e 0 0 ]
+"201
+[v _ISRDispatch ISRDispatch `II(v  1 e 0 0 ]
+"221
+[v _ISRI2C ISRI2C `(v  1 e 0 0 ]
+"340
+[v _I2CSlaveSetup I2CSlaveSetup `(v  1 e 0 0 ]
+"369
+[v _EEPROMReadByte EEPROMReadByte `(uc  1 e 1 0 ]
+"391
+[v _EEPROMWriteByte EEPROMWriteByte `(v  1 e 0 0 ]
+"424
+[v _DelayMs DelayMs `(v  1 e 0 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\abdiv.c
+[v ___abdiv __abdiv `(c  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\abmod.c
+[v ___abmod __abmod `(c  1 e 1 0 ]
+"33 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\abtoft.c
+[v ___abtoft __abtoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"42 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\altoft.c
+[v ___altoft __altoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"37 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\attoft.c
+[v ___attoft __attoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"32 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"18 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"27 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"35 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"30 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\lttoft.c
+[v ___lttoft __lttoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"28 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\Umul24.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 0 0 ]
+"24
+[v _memcpyee memcpyee `(v  1 e 0 0 ]
+"48
+[v ___eetoc __eetoc `(uc  1 e 1 0 ]
+"56
+[v ___eetoi __eetoi `(ui  1 e 2 0 ]
+"64
+[v ___eetom __eetom `(um  1 e 3 0 ]
+"72
+[v ___eetol __eetol `(ul  1 e 4 0 ]
+"80
+[v ___ctoee __ctoee `(uc  1 e 1 0 ]
+"87
+[v ___itoee __itoee `(ui  1 e 2 0 ]
+"94
+[v ___mtoee __mtoee `(um  1 e 3 0 ]
+"101
+[v ___ltoee __ltoee `(ul  1 e 4 0 ]
+"108
+[v ___eetoft __eetoft `(f  1 e 3 0 ]
+"116
+[v ___eetofl __eetofl `(d  1 e 3 0 ]
+"124
+[v ___fttoee __fttoee `(f  1 e 3 0 ]
+"131
+[v ___fltoee __fltoee `(d  1 e 3 0 ]
+"49 C:\Program Files (x86)\Microchip\xc8\v1.32\sources\pic\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"52 E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c
+[v _SSP1STATSave SSP1STATSave `VEuc  1 e 1 0 ]
+"53
+[v _I2CInBuffer I2CInBuffer `VE[5]uc  1 e 5 0 ]
+"54
+[v _I2COutBuffer I2COutBuffer `VE[5]uc  1 e 5 0 ]
+"55
+[v _I2CInBufIndex I2CInBufIndex `VEuc  1 e 1 0 ]
+"56
+[v _I2COutBufIndex I2COutBufIndex `VEuc  1 e 1 0 ]
+"58
+[v _Temp Temp `[6]uc  1 e 6 0 ]
+"60
+[v _Temp1 Temp1 `uc  1 e 1 0 ]
+"61
+[v _Temp2 Temp2 `uc  1 e 1 0 ]
+"335 C:\Program Files (x86)\Microchip\xc8\v1.32\include\pic12f1822.h
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+[s S45 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"718
+[u S54 . 1 `S45 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES54  1 e 1 @17 ]
+"1030
+[v _PR2 PR2 `VEuc  1 e 1 @27 ]
+"1049
+[v _T2CON T2CON `VEuc  1 e 1 @28 ]
+"1492
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1607
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2576
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2622
+[v _EEADR EEADR `VEus  1 e 2 @401 ]
+"2677
+[v _EEDATA EEDATA `VEuc  1 e 1 @403 ]
+"2728
+[v _EECON1 EECON1 `VEuc  1 e 1 @405 ]
+"2789
+[v _EECON2 EECON2 `VEuc  1 e 1 @406 ]
+"3172
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @529 ]
+"3209
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
+"3283
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
+"3404
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
+"3607
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
+"3728
+[v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @535 ]
+"3855
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @657 ]
+"3893
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @659 ]
+"4958
+[v _ACKSTAT ACKSTAT `VEb  1 e 0 @4278 ]
+"5062
+[v _CARRY CARRY `VEb  1 e 0 @24 ]
+"5084
+[v _CCP1SEL CCP1SEL `VEb  1 e 0 @2280 ]
+"5104
+[v _CKP CKP `VEb  1 e 0 @4268 ]
+"5206
+[v _GCEN GCEN `VEb  1 e 0 @4279 ]
+"5208
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"5282
+[v _LATA5 LATA5 `VEb  1 e 0 @2149 ]
+"5424
+[v _RD RD `VEb  1 e 0 @3240 ]
+"5510
+[v _SSP1IE SSP1IE `VEb  1 e 0 @1163 ]
+"5512
+[v _SSP1IF SSP1IF `VEb  1 e 0 @139 ]
+"5514
+[v _SSPEN SSPEN `VEb  1 e 0 @4269 ]
+"5634
+[v _TRISA1 TRISA1 `VEb  1 e 0 @1121 ]
+"5636
+[v _TRISA2 TRISA2 `VEb  1 e 0 @1122 ]
+"5642
+[v _TRISA5 TRISA5 `VEb  1 e 0 @1125 ]
+"5700
+[v _WR WR `VEb  1 e 0 @3241 ]
+"5702
+[v _WREN WREN `VEb  1 e 0 @3242 ]
+"83 E:\Sync Folders\Private\Work\Granz Scientific\Pi Geiger Counter\firmware/main.c
+[v _main main `(v  1 e 0 0 ]
+{
+"87
+[v main@k k `uc  1 a 1 2 ]
+"85
+[v main@newI2CAddress newI2CAddress `uc  1 a 1 1 ]
+"86
+[v main@lockoutI2CAddressChange lockoutI2CAddressChange `uc  1 a 1 0 ]
+"196
+} 0
+"340
+[v _I2CSlaveSetup I2CSlaveSetup `(v  1 e 0 0 ]
+{
+[v I2CSlaveSetup@address address `uc  1 a 1 wreg ]
+"342
+[v I2CSlaveSetup@i i `uc  1 a 1 4 ]
+"340
+[v I2CSlaveSetup@address address `uc  1 a 1 wreg ]
+"345
+[v I2CSlaveSetup@address address `uc  1 a 1 3 ]
+"366
+} 0
+"369
+[v _EEPROMReadByte EEPROMReadByte `(uc  1 e 1 0 ]
+{
+[v EEPROMReadByte@addr addr `uc  1 a 1 wreg ]
+[v EEPROMReadByte@addr addr `uc  1 a 1 wreg ]
+"371
+[v EEPROMReadByte@addr addr `uc  1 a 1 3 ]
+"388
+} 0
+"201
+[v _ISRDispatch ISRDispatch `II(v  1 e 0 0 ]
+{
+"218
+} 0
+"221
+[v _ISRI2C ISRI2C `(v  1 e 0 0 ]
+{
+"223
+[v ISRI2C@generalCall generalCall `uc  1 s 1 generalCall ]
+"335
+} 0
