@@ -11,7 +11,7 @@ total_count = 0
 
 # I2C config for HV
 bus = smbus.SMBus(1) # I2C1 port
-bus.write_byte(i2c_addr, 0x81)
+bus.write_byte(i2c_addr, 0x71)
 
 #GPIO.setmode(GPIO.BCM)
 #GPIO.setup(gpio_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
