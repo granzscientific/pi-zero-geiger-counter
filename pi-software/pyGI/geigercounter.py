@@ -13,12 +13,14 @@ log = logging.getLogger(__name__)
 
 try:
     import RPi.GPIO as GPIO
+    import smbus
     gpio_available = True
 except ImportError:
     log.info("+---------------------------------------------------------------------------+")
-    log.info("|              Could not import RPi.GPIO python module.                     |")
+    log.info("|         Could not import RPi.GPIO or smbus python modules.                |")
     log.info("|   I'm assuming you are in development/show mode on another host system    |")
-    log.info("| If this is a Raspberry PI/PiGI and you want real counts, install RPi.GPIO |")
+    log.info("|    If this is a Raspberry PI and you want real counts, you'll need to     |")
+    log.info("|                     install RPi.GPIO and smbus.                           |")
     log.info("+---------------------------------------------------------------------------+")
     log.info("Engaging TickSimulator with an avg. radiation level of %(edr)s uSv/h instead" % {"edr": cfg.getfloat('geigercounter','sim_dose_rate')})
     gpio_available = False
@@ -53,7 +55,6 @@ class Geigercounter (threading.Thread):
         else:
             self.entropygenerator = None
 
-
         self.reset()
         self.start()
 
@@ -79,6 +80,11 @@ class Geigercounter (threading.Thread):
             GPIO.setup(gpio_port,GPIO.IN)
             GPIO.add_event_detect(gpio_port,GPIO.FALLING)
             GPIO.add_event_callback(gpio_port,self.tick)
+
+            # I2C config for HV output
+            i2c_addr = 0x19
+            bus = smbus.SMBus(1) # I2C1 port
+            #bus.write_byte(i2c_addr, 0x81)
         else:
             TickSimulator(self).start()
 

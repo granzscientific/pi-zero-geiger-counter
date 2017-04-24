@@ -14,7 +14,7 @@ webGI.alert = (function($) {
      * Public attributes *******************************************************/
 
     var my = {
-        enabled: true
+        enabled: false
     };
 
 

@@ -1,4 +1,5 @@
 import threading
+import traceback
 import json
 import time
 import datetime
@@ -34,6 +35,10 @@ class WebSocketClientConnector():
         except Exception, e:
             self.active = False
             log.error(e)
+
+#    def close(self):
+#        self.active = False
+#        self.ws.close()
 
     def receive_commands(self,handler):
         #FIXME: some commands need clearer names
@@ -160,7 +165,13 @@ class ClientsHandler():
         if client.active:
             client.send(msg)
         else:
-            self.clients.remove(client)
+            #client.close()
+            if client in self.clients:
+                self.clients.remove(client)
+            else:
+                log.error("send_if_active(): client not in self.clients ?!")
+                for line in traceback.format_stack():
+                    print(line.strip())
 
     def _loop_status(self):
         log.info("Starting status update loop.")

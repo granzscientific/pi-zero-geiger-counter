@@ -66,8 +66,8 @@ webGI.status = (function($) {
             ws_status = new WebSocket(webGI.conf.websocket_host + "/ws_status");
 
             showErrorModal(
-                'Websocket Error',
-                '<p>Wheeeeh, I lost my sockets. Either the server has gone down or the network connection is unreliable or stalled.</p><b>Possible solutions:</b></p><ul><li>Is the pyGI daemon running on the Pi?</li><li>Enable/toggle your WIFI connection</li></ul>'
+                'Websocket Error (2)',
+                '<p>Either the server has gone down or the network connection is unreliable or stalled.</p><b>Possible solutions:</b></p><ul><li>Is the pyGI daemon running on the Pi?</li><li>Enable/toggle your WIFI connection</li></ul>'
             );
 
             setTimeout(function() {

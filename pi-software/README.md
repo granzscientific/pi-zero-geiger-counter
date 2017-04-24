@@ -1,4 +1,4 @@
-# pyGI/webGI - A software suite for the PiGI
+# pyGI/webGI - A Web interface for the Granz Scientific Raspberry Pi Zero Geiger Counter
 
 Python/HTML5/CSS/JS/Websocket software suite for collecting, distributing,
 monitoring, mapping and analyzing ionizing radiation counts detected by the PiGI-Module.
@@ -33,17 +33,11 @@ successfully on any other OS, please update this:
     $ sudo pip install ez-setup
     $ sudo pip install leveldb greenlet bottle gevent gevent-websocket
 
-#### Gentoo
+#### Raspberry Pi deployment
 
-    $ emerge -av dev-libs/libevent dev-python/pip
-    $ pip install ez-setup
-    $ pip install leveldb greenlet bottle gevent gevent-websocket
-
-#### Raspberry PI deployment
-
-If you want to deploy the code on a PI for production in order to count
-values from a real GM tube connected to the PiGI-Module, you have to make
-sure to satisfy the RPi.GPIO dependency:
+If you want to deploy the code on a Pi for production in order to count
+values from a real GM tube connected to the Pi, you have to make sure to
+satisfy the RPi.GPIO dependency:
 
     * pip install RPi.GPIO
 
@@ -52,7 +46,7 @@ RPi.GPIO with the default installation.
 
 ### Clone repo
 
-    $ git clone https://github.com/apollo-ng/PiGI.git
+    $ git clone https://github.com/granzscientific/PiZeroGeigerCounter.git
 
 ## Configuration
 
@@ -73,12 +67,12 @@ won't work and port 80 will not be accessible due to security (<1024).
 
 ### Server Startup
 
-    $ cd PiGI/software/
-    $ python pyGIserver.py
+    $ cd PiGI/
+    $ ./pyGIserver.py
 
 ### Client Access
 
-Open Browser and goto http://127.0.0.1:8080
+Open Browser and goto http://localhost:8080
 
 ### License
 
