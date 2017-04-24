@@ -84,7 +84,7 @@ class Geigercounter (threading.Thread):
             # I2C config for HV output
             i2c_addr = 0x19
             bus = smbus.SMBus(1) # I2C1 port
-            #bus.write_byte(i2c_addr, 0x81)
+            bus.write_byte(i2c_addr, 0x81)
         else:
             TickSimulator(self).start()
 
