@@ -1,11 +1,11 @@
-import threading
-import os
-import time
-import random
+# coding=utf-8
 import datetime
 import logging
-
+import random
+import threading
+import time
 from collections import deque
+
 from configurator import cfg
 from entropygenerator import EntropyGenerator
 
@@ -14,6 +14,7 @@ log = logging.getLogger(__name__)
 try:
     import RPi.GPIO as GPIO
     import smbus
+
     gpio_available = True
 except ImportError:
     log.info("+---------------------------------------------------------------------------+")
@@ -22,10 +23,11 @@ except ImportError:
     log.info("|    If this is a Raspberry PI and you want real counts, you'll need to     |")
     log.info("|                     install RPi.GPIO and smbus.                           |")
     log.info("+---------------------------------------------------------------------------+")
-    log.info("Engaging TickSimulator with an avg. radiation level of %(edr)s uSv/h instead" % {"edr": cfg.getfloat('geigercounter','sim_dose_rate')})
+    log.info("Engaging TickSimulator with an avg. radiation level of %(edr)s uSv/h instead" % {"edr": cfg.getfloat('geigercounter', 'sim_dose_rate')})
     gpio_available = False
 
-class TickSimulator (threading.Thread):
+
+class TickSimulator(threading.Thread):
     def __init__(self, geiger):
         threading.Thread.__init__(self)
         self.daemon = True
@@ -34,24 +36,24 @@ class TickSimulator (threading.Thread):
 
     def run(self):
         while True:
-            ratefactor = cfg.getfloat('geigercounter','tube_rate_factor')
-            simrate = cfg.getfloat('geigercounter','sim_dose_rate')
-            rate = simrate/ratefactor
-            time.sleep(random.random()/rate*120)
+            ratefactor = cfg.getfloat('geigercounter', 'tube_rate_factor')
+            simrate = cfg.getfloat('geigercounter', 'sim_dose_rate')
+            rate = simrate / ratefactor
+            time.sleep(random.random() / rate * 120)
             self.geiger.tick()
 
 
-class Geigercounter (threading.Thread):
-    def __init__(self,total=0,total_dtc=0):
+class Geigercounter(threading.Thread):
+    def __init__(self, total=0, total_dtc=0):
         log.info("Starting geigercounter")
         threading.Thread.__init__(self)
         self.daemon = True
         self.socket = None
-        self.totalcount=total
-        self.totalcount_dtc=total_dtc
+        self.totalcount = total
+        self.totalcount_dtc = total_dtc
 
-        if cfg.getboolean('entropy','enable'):
-            self.entropygenerator = EntropyGenerator(cfg.get('entropy','filename'))
+        if cfg.getboolean('entropy', 'enable'):
+            self.entropygenerator = EntropyGenerator(cfg.get('entropy', 'filename'))
         else:
             self.entropygenerator = None
 
@@ -59,12 +61,12 @@ class Geigercounter (threading.Thread):
         self.start()
 
     def reset(self):
-        self.count=0
-        self.cps=0
-        self.cpm=0
-        self.cps_dtc=0
-        self.cpm_dtc=0
-        self.edr=0
+        self.count = 0
+        self.cps = 0
+        self.cpm = 0
+        self.cps_dtc = 0
+        self.cpm_dtc = 0
+        self.edr = 0
 
     def tick(self, pin=None):
         self.count += 1
@@ -76,75 +78,75 @@ class Geigercounter (threading.Thread):
     def run(self):
         if gpio_available:
             GPIO.setmode(GPIO.BCM)
-            gpio_port = cfg.getint('geigercounter','gpio_port')
-            GPIO.setup(gpio_port,GPIO.IN)
-            GPIO.add_event_detect(gpio_port,GPIO.FALLING)
-            GPIO.add_event_callback(gpio_port,self.tick)
+            gpio_port = cfg.getint('geigercounter', 'gpio_port')
+            GPIO.setup(gpio_port, GPIO.IN)
+            GPIO.add_event_detect(gpio_port, GPIO.FALLING)
+            GPIO.add_event_callback(gpio_port, self.tick)
 
             # I2C config for HV output
             i2c_addr = 0x19
-            bus = smbus.SMBus(1) # I2C1 port
+            bus = smbus.SMBus(1)  # I2C1 port
             bus.write_byte(i2c_addr, 0x71)
         else:
             TickSimulator(self).start()
 
-        cpm_fifo = deque([],60)
-        cpm_dtc_fifo = deque([],60)
+        cpm_fifo = deque([], 60)
+        cpm_dtc_fifo = deque([], 60)
         while True:
             time.sleep(1)
 
             # Statistical correction of tube dead-time
             if gpio_available:
-                deadtime = cfg.getfloat('geigercounter','tube_dead_time')
-                count_dtc = int(self.count/(1-(self.count*deadtime)))
+                deadtime = cfg.getfloat('geigercounter', 'tube_dead_time')
+                count_dtc = int(self.count / (1 - (self.count * deadtime)))
             else:
                 count_dtc = self.count
-                
+
             cpm_fifo.appendleft(self.count)
             cpm_dtc_fifo.appendleft(count_dtc)
 
-            self.cpm = int(sum(cpm_fifo)*60.0/len(cpm_fifo))
-            self.cpm_dtc = int(sum(cpm_dtc_fifo)*60.0/len(cpm_dtc_fifo))
+            self.cpm = int(sum(cpm_fifo) * 60.0 / len(cpm_fifo))
+            self.cpm_dtc = int(sum(cpm_dtc_fifo) * 60.0 / len(cpm_dtc_fifo))
             self.cps = self.count
             self.cps_dtc = count_dtc
-            
-            ratefactor = cfg.getfloat('geigercounter','tube_rate_factor')
-            self.edr = round(self.cpm_dtc * ratefactor,2)
-            
+
+            ratefactor = cfg.getfloat('geigercounter', 'tube_rate_factor')
+            self.edr = round(self.cpm_dtc * ratefactor, 2)
+
             self.totalcount_dtc += (count_dtc - self.count)
-            
+
             self.count = 0
-            
+
             log.debug(self.get_state())
 
     def get_state(self):
         msg = {
-                "type": "geigerjson",
-                "node_uuid": cfg.get('node','uuid'),
-                "timestamp": int(datetime.datetime.now().strftime("%s")),
-                "geostamp": {
-                    "lat": cfg.getfloat('node','lat'),
-                    "lon": cfg.getfloat('node','lon'),
-                    "alt": cfg.getfloat('node','alt')
-                },
-                "parameters": {
-                    "tube_id": cfg.get('geigercounter','tube_id'),
-                    "dead_time": cfg.getfloat('geigercounter','tube_dead_time'),
-                    "tube_factor": cfg.getfloat('geigercounter','tube_rate_factor'),
-                    "opmode": cfg.get('node', 'opmode'),
-                    "window": cfg.get('geigercounter', 'window')
-                },
-                "data": {
-                    "source": cfg.get('geigercounter', 'source') if gpio_available else "sim",
-                    "cps": self.cps,
-                    "cps_dtc": self.cps_dtc,
-                    "cpm": self.cpm,
-                    "cpm_dtc": self.cpm_dtc,
-                    "totalcount": self.totalcount,
-                    "totalcount_dtc": self.totalcount_dtc,
-                    "edr": self.edr
-                },
-                "annotation": ""
+            "type": "geigerjson",
+            "node_uuid": cfg.get('node', 'uuid'),
+            "timestamp": int(datetime.datetime.now().strftime("%s")),
+            "geostamp": {
+                "lat": cfg.getfloat('node', 'lat'),
+                "lon": cfg.getfloat('node', 'lon'),
+                "alt": cfg.getfloat('node', 'alt')
+            },
+            "parameters": {
+                "tube_id": cfg.get('geigercounter', 'tube_id'),
+                "dead_time": cfg.getfloat('geigercounter', 'tube_dead_time'),
+                "tube_factor": cfg.getfloat('geigercounter', 'tube_rate_factor'),
+                "opmode": cfg.get('node', 'opmode'),
+                "window": cfg.get('geigercounter', 'window')
+            },
+            "data": {
+                "source": cfg.get('geigercounter', 'source') if gpio_available else "sim",
+                "cps": self.cps,
+                "cps_dtc": self.cps_dtc,
+                "cpm": self.cpm,
+                "cpm_dtc": self.cpm_dtc,
+                "totalcount": self.totalcount,
+                "totalcount_dtc": self.totalcount_dtc,
+                "edr": self.edr
+            },
+            "annotation": ""
 
-            }
+        }
         return msg

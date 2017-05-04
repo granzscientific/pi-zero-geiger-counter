@@ -1,24 +1,20 @@
-import bottle
-from gevent.pywsgi import WSGIServer
-from geventwebsocket import WebSocketError
-from geventwebsocket.handler import WebSocketHandler
-
-import json
+# coding=utf-8
 import logging
 import os
 import sys
 
-from configurator import cfg
-
-import geigercounter
+import bottle
 import geigerclient
+from configurator import cfg
+from gevent.pywsgi import WSGIServer
+from geventwebsocket.handler import WebSocketHandler
 
-log=logging.getLogger(__name__)
+log = logging.getLogger(__name__)
 
 app = bottle.Bottle()
 script_dir = sys.path[0]
-public_dir = os.path.join(script_dir,"public")
-log_dir = os.path.join(script_dir,"log")
+public_dir = os.path.join(script_dir, "public")
+log_dir = os.path.join(script_dir, "log")
 
 geiger = None
 geigerlog = None
@@ -52,21 +48,21 @@ def handle_ws():
     env = bottle.request.environ
     wsock = env.get('wsgi.websocket')
     if not wsock:
-        abort(400, 'Expected WebSocket request.')
-    log.info("websocket opened (%s)"%wsock.path)
+        bottle.abort(400, 'Expected WebSocket request.')
+    log.info("websocket opened (%s)" % wsock.path)
     client = geigerclient.WebSocketClientConnector(wsock)
     clients_handler.add(client)
     client.receive_commands(clients_handler)
 
 
-def start(g,gl):
+def start(g, gl):
     global geiger, geigerlog, clients_handler
     geiger = g
     geigerlog = gl
-    clients_handler = geigerclient.ClientsHandler(geiger,geigerlog)
+    clients_handler = geigerclient.ClientsHandler(geiger, geigerlog)
 
-    ip = cfg.get('server','ip')
-    port = cfg.getint('server','port')
+    ip = cfg.get('server', 'ip')
+    port = cfg.getint('server', 'port')
     log.info("listening on %s:%d" % (ip, port))
 
     server = WSGIServer((ip, port), app,
