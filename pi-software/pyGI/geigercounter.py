@@ -59,6 +59,10 @@ class Geigercounter (threading.Thread):
         self.start()
 
     def reset(self):
+        if gpio_available:
+            i2c_addr = 0x19
+            bus = smbus.SMBus(1)
+            bus.write_byte(i2c_addr, 0x00)
         self.count=0
         self.cps=0
         self.cpm=0

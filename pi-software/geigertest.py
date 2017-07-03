@@ -19,17 +19,20 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(gpio_pin, GPIO.IN)
 
 def my_callback(channel):
-	global total_count
-	total_count = total_count + 1
-	sys.stdout.write('*')
-	sys.stdout.flush()
+    global total_count
+    total_count = total_count + 1
+    sys.stdout.write('*')
+    sys.stdout.flush()
 
 GPIO.add_event_detect(gpio_pin, GPIO.FALLING)
 GPIO.add_event_callback(gpio_pin, my_callback)
 
-while True:
-	raw_input('')
-	print(str(total_count))
-	#test = GPIO.input(gpio_pin)
-	#print 'Got: ' + str(test)
+try:
+    while True:
+        raw_input('')
+        print(str(total_count))
+        #test = GPIO.input(gpio_pin)
+        #print 'Got: ' + str(test)
 
+except KeyboardInterrupt:
+    bus.write_byte(i2c_addr, 0x00)

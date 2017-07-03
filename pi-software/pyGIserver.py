@@ -32,3 +32,4 @@ if __name__ == "__main__":
         
     except KeyboardInterrupt:
         log.info("Stopping pyGIserver")
+        geiger.reset() # stop hardware HV generator
