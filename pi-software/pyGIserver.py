@@ -23,13 +23,13 @@ if __name__ == "__main__":
         log.info("Last total: %d, total_dtc: %d"%(last_total, last_total_dtc))
         #start geigercounter
         geiger = geigercounter.Geigercounter(total=last_total, total_dtc=last_total_dtc)
-        
+
         #start geigercounter logging
         geigerlog = geigerlog.GeigerLog(geiger)
-    
+
         #start the bottle server stuff
         geigerserver.start(geiger,geigerlog)
-        
+
     except KeyboardInterrupt:
         log.info("Stopping pyGIserver")
         geiger.reset() # stop hardware HV generator

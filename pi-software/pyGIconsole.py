@@ -25,10 +25,10 @@ if __name__ == "__main__":
 
         # start geigercounter
         geiger = geigercounter.Geigercounter(total=last_total, total_dtc=last_total_dtc)
-     
+
         # start geigercounter logging
         geigerlog = geigerlog.GeigerLog(geiger)
-    
+
         # loop, reporting rates
 
         last_ticks = geiger.totalcount
