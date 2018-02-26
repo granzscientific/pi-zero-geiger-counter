@@ -3,6 +3,15 @@
 Python/HTML5/CSS/JS/Websocket software suite for collecting, distributing,
 monitoring, mapping and analyzing ionizing radiation counts detected by the PiGI-Module.
 
+This software stack is based on the Raspberry Pi Geiger Counter project described here:
+
+http://projects-raspberry.com/pigi-raspberry-pi-geiger-muller-interface/
+
+and here:
+
+https://apollo.open-resource.org/lab:pigi
+
+
 ## Sneak-Preview: Development screenshots in action
 
 ### Main instrument panel
@@ -46,7 +55,7 @@ RPi.GPIO with the default installation.
 
 ### Clone repo
 
-    $ git clone https://github.com/granzscientific/PiZeroGeigerCounter.git
+    $ git clone https://github.com/granzscientific/pi-zero-geiger-counter.git
 
 ## Configuration
 
